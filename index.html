@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexora AI | The Future of Intelligent Automation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --background: 0 0% 100%;
+            --foreground: 210 14% 17%;
+            --primary: 210 14% 17%;
+            --primary-foreground: 0 0% 100%;
+            --secondary: 0 0% 96%;
+            --secondary-foreground: 0 0% 9%;
+            --muted: 0 0% 96%;
+            --muted-foreground: 184 5% 55%;
+            --accent: 239 84% 67%;
+            --accent-foreground: 0 0% 100%;
+            --border: 0 0% 90%;
+            --radius: 0.5rem;
+            --font-display: 'Instrument Serif', serif;
+            --font-body: 'Inter', sans-serif;
+            --shadow-dashboard: 0 25px 80px -12px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.06);
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: hsl(var(--foreground));
+            background-color: hsl(var(--background));
+        }
+
+        .font-display { font-family: var(--font-display); }
+        .font-body { font-family: var(--font-body); }
+        .italic-serif { font-style: italic; }
+
+        .dashboard-container {
+            background: rgba(255, 255, 255, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: var(--shadow-dashboard);
+            backdrop-filter: blur(12px);
+        }
+
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="h-screen flex flex-col overflow-hidden">
+    
+    <!-- Navbar -->
+    <nav class="flex items-center justify-between px-6 md:px-12 lg:px-20 py-5 z-20">
+        <div class="text-xl font-semibold tracking-tight text-foreground flex items-center gap-2">
+            <span class="text-accent text-2xl">✦</span> Nexora
+        </div>
+        <div class="hidden md:flex items-center gap-8">
+            <a href="#" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Home</a>
+            <a href="#" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Pricing</a>
+            <a href="#" class="text-sm text-muted-foreground hover:text-foreground transition-colors">About</a>
+            <a href="#" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Contact</a>
+        </div>
+        <button class="bg-foreground text-background rounded-full px-6 py-2 text-sm font-medium hover:opacity-90 transition-opacity">
+            Get Started
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative flex-1 flex flex-col items-center pt-12 px-6">
+        <!-- Background Video -->
+        <video class="absolute inset-0 w-full h-full object-cover z-0 brightness-95" autoplay muted loop playsinline>
+            <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260319_015952_e1deeb12-8fb7-4071-a42a-60779fc64ab6.mp4" type="video/mp4">
+        </video>
+
+        <div class="relative z-10 flex flex-col items-center w-full max-w-5xl text-center">
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-1.5 rounded-full border border-border bg-background px-4 py-1.5 text-sm text-muted-foreground mb-6 shadow-sm">
+                Now with GPT-5 support ✨
+            </div>
+
+            <!-- Headline -->
+            <h1 class="font-display text-5xl md:text-6xl lg:text-8xl leading-[0.95] tracking-tight text-foreground max-w-3xl">
+                The Future of <span class="italic-serif">Smarter</span> Automation
+            </h1>
+
+            <!-- Subheadline -->
+            <p class="mt-6 text-base md:text-lg text-muted-foreground max-w-[650px] leading-relaxed">
+                Automate your busywork with intelligent agents that learn, adapt, and execute—so your team can focus on what matters most.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="mt-8 flex items-center gap-4">
+                <button class="bg-foreground text-background rounded-full px-8 py-4 text-sm font-medium hover:scale-105 transition-transform">
+                    Book a demo
+                </button>
+                <button class="h-12 w-12 rounded-full bg-background flex items-center justify-center shadow-lg hover:bg-gray-50 transition-colors">
+                    <i data-lucide="play" class="w-4 h-4 fill-foreground"></i>
+                </button>
+            </div>
+
+            <!-- Dashboard Preview -->
+            <div class="mt-12 w-full dashboard-container rounded-2xl p-4 overflow-hidden border border-white/40">
+                <div class="w-full h-full bg-white/50 rounded-xl overflow-hidden flex flex-col text-[11px] select-none pointer-events-none text-left">
+                    <!-- Dashboard Top Bar -->
+                    <div class="flex items-center justify-between px-4 py-3 border-b border-gray-200 bg-white/80">
+                        <div class="flex items-center gap-3">
+                            <div class="w-6 h-6 bg-foreground rounded flex items-center justify-center text-background font-bold text-xs">N</div>
+                            <span class="font-semibold text-sm">Nexora</span>
+                            <i data-lucide="chevron-down" class="w-3 h-3 text-muted-foreground"></i>
+                        </div>
+                        <div class="bg-gray-100 rounded-lg px-3 py-1.5 flex items-center gap-2 w-64 text-muted-foreground">
+                            <i data-lucide="search" class="w-3 h-3"></i>
+                            <span>Search everything...</span>
+                            <span class="ml-auto text-[9px] border border-gray-300 rounded px-1">⌘K</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <button class="bg-accent text-white rounded px-3 py-1 font-medium">Move Money</button>
+                            <i data-lucide="bell" class="w-4 h-4 text-muted-foreground"></i>
+                            <div class="w-7 h-7 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-700 font-bold">JB</div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-1 overflow-hidden">
+                        <!-- Sidebar -->
+                        <div class="w-48 bg-white/60 border-r border-gray-200 p-4 flex flex-col gap-6">
+                            <div class="space-y-1">
+                                <div class="flex items-center gap-2 p-2 bg-gray-100 rounded-md font-medium">
+                                    <i data-lucide="home" class="w-3.5 h-3.5"></i> Home
+                                </div>
+                                <div class="flex items-center justify-between p-2 text-muted-foreground hover:bg-gray-50 rounded-md">
+                                    <div class="flex items-center gap-2"><i data-lucide="check-square" class="w-3.5 h-3.5"></i> Tasks</div>
+                                    <span class="bg-accent text-white text-[9px] px-1.5 rounded-full">10</span>
+                                </div>
+                                <div class="flex items-center gap-2 p-2 text-muted-foreground hover:bg-gray-50 rounded-md"><i data-lucide="repeat" class="w-3.5 h-3.5"></i> Transactions</div>
+                                <div class="flex items-center justify-between p-2 text-muted-foreground hover:bg-gray-50 rounded-md">
+                                    <div class="flex items-center gap-2"><i data-lucide="credit-card" class="w-3.5 h-3.5"></i> Payments</div>
+                                    <i data-lucide="chevron-down" class="w-2.5 h-2.5"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="text-[9px] font-bold text-muted-foreground px-2 mb-2 tracking-wider">WORKFLOWS</div>
+                                <div class="space-y-1">
+                                    <div class="p-2 text-muted-foreground hover:bg-gray-50 rounded-md">Trade routes</div>
+                                    <div class="p-2 text-muted-foreground hover:bg-gray-50 rounded-md">Notifications</div>
+                                    <div class="p-2 text-muted-foreground hover:bg-gray-50 rounded-md">Settings</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Main Content -->
+                        <div class="flex-1 bg-gray-50/50 p-6 overflow-y-auto no-scrollbar">
+                            <h2 class="text-base font-semibold mb-4">Welcome, Jane</h2>
+                            
+                            <div class="flex gap-2 mb-8">
+                                <button class="bg-accent text-white px-4 py-1.5 rounded-full font-medium">Send</button>
+                                <button class="bg-white border border-gray-200 px-4 py-1.5 rounded-full font-medium">Request</button>
+                                <button class="bg-white border border-gray-200 px-4 py-1.5 rounded-full font-medium">Transfer</button>
+                                <button class="bg-white border border-gray-200 px-4 py-1.5 rounded-full font-medium">Deposit</button>
+                                <button class="bg-white border border-gray-200 px-4 py-1.5 rounded-full font-medium">Pay Bill</button>
+                                <span class="ml-auto text-muted-foreground flex items-center gap-1">Customize <i data-lucide="plus" class="w-2.5 h-2.5"></i></span>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-6 mb-6">
+                                <!-- Balance Card -->
+                                <div class="bg-white p-5 rounded-2xl border border-gray-200 shadow-sm">
+                                    <div class="flex items-center gap-1.5 text-muted-foreground mb-1">
+                                        Mercury Balance <i data-lucide="check-circle" class="w-3 h-3 text-emerald-500"></i>
+                                    </div>
+                                    <div class="text-2xl font-bold mb-4">$8,450,190<span class="text-sm font-normal text-muted-foreground">.32</span></div>
+                                    <div class="flex gap-4 text-[9px] font-medium mb-4">
+                                        <div class="text-emerald-500">+ $1.8M (30d)</div>
+                                        <div class="text-rose-500">- $900K (30d)</div>
+                                    </div>
+                                    <div class="w-full h-24">
+                                        <svg viewBox="0 0 400 100" class="w-full h-full">
+                                            <defs>
+                                                <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
+                                                    <stop offset="0%" stop-color="hsl(var(--accent))" stop-opacity="0.15" />
+                                                    <stop offset="100%" stop-color="hsl(var(--accent))" stop-opacity="0" />
+                                                </linearGradient>
+                                            </defs>
+                                            <path d="M0,80 C50,70 100,90 150,40 C200,10 250,50 300,30 C350,20 400,10 400,10 L400,100 L0,100 Z" fill="url(#chartGradient)" />
+                                            <path d="M0,80 C50,70 100,90 150,40 C200,10 250,50 300,30 C350,20 400,10 400,10" fill="none" stroke="hsl(var(--accent))" stroke-width="2" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <!-- Accounts Card -->
+                                <div class="bg-white p-5 rounded-2xl border border-gray-200 shadow-sm">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <span class="font-semibold text-sm">Accounts</span>
+                                        <div class="flex gap-2">
+                                            <i data-lucide="plus" class="w-3 h-3 text-muted-foreground"></i>
+                                            <i data-lucide="more-vertical" class="w-3 h-3 text-muted-foreground"></i>
+                                        </div>
+                                    </div>
+                                    <div class="space-y-4">
+                                        <div class="flex justify-between items-center">
+                                            <div class="flex items-center gap-2"><div class="w-2 h-2 bg-indigo-500 rounded-full"></div> Credit</div>
+                                            <div class="font-bold">$98,125.50</div>
+                                        </div>
+                                        <div class="flex justify-between items-center">
+                                            <div class="flex items-center gap-2"><div class="w-2 h-2 bg-emerald-500 rounded-full"></div> Treasury</div>
+                                            <div class="font-bold">$6,750,200.00</div>
+                                        </div>
+                                        <div class="flex justify-between items-center">
+                                            <div class="flex items-center gap-2"><div class="w-2 h-2 bg-amber-500 rounded-full"></div> Operations</div>
+                                            <div class="font-bold">$1,592,864.82</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Transactions Table -->
+                            <div class="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+                                <div class="px-5 py-4 border-b border-gray-100 font-semibold text-sm">Recent Transactions</div>
+                                <table class="w-full text-left">
+                                    <thead>
+                                        <tr class="text-muted-foreground bg-gray-50/50">
+                                            <th class="px-5 py-2 font-medium">Date</th>
+                                            <th class="px-5 py-2 font-medium">Description</th>
+                                            <th class="px-5 py-2 font-medium">Amount</th>
+                                            <th class="px-5 py-2 font-medium">Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-gray-100">
+                                        <tr>
+                                            <td class="px-5 py-3">Jun 10, 2026</td>
+                                            <td class="px-5 py-3">AWS Cloud Services</td>
+                                            <td class="px-5 py-3 font-semibold text-rose-500">- $5,200.00</td>
+                                            <td class="px-5 py-3"><span class="bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full text-[9px]">Pending</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-5 py-3">Jun 09, 2026</td>
+                                            <td class="px-5 py-3">Client Payment - TechFlow</td>
+                                            <td class="px-5 py-3 font-semibold text-emerald-500">+ $125,000.00</td>
+                                            <td class="px-5 py-3"><span class="bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full text-[9px]">Completed</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-5 py-3">Jun 08, 2026</td>
+                                            <td class="px-5 py-3">Monthly Payroll</td>
+                                            <td class="px-5 py-3 font-semibold text-rose-500">- $85,450.00</td>
+                                            <td class="px-5 py-3"><span class="bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full text-[9px]">Completed</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
